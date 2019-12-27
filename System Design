@@ -1,0 +1,47 @@
+Seed URL:
+Intiater URL ,Initially we need a basic url which the crawler will start searching another urls on that site. eg. google.com,Moneycontrol.com,amazon.com etc.
+For better Crawling, we can make a list of seed url's .ie. one url after another will be crawled continously.
+
+Url frontier:
+It a Queue type data structure which will be used to give priority to the sites.
+
+Fetcher and renderers:
+Multiple threads used to fetch the urls or require type of the files we are searching for.
+Concurrency is the key for making the rendering fast.ie. getting the required content from the url.
+URLs will be taken by the fetchers from the url frontier then the fetchers will start crawling.
+Dynamic pages are used now a days  because single page application are there hence we need server side rendering and client side rendering also
+ie. only html rendering is not enough.
+Frameworks/Library used for server side rendering:next.js,gatsby . for checking whether website is properly searched and not half way only.
+
+
+
+
+
+DNS Resolver:
+Before the Fetcher start crawling the url. we first need to check the url with dns resolver.
+Before checking whether the url is previously visited or not.it will take multiple comparision we choose other way than DNS Resolver 
+for example like checking the url in the operating system, checking the cache,check the isp.
+to cut down time we need to implement our own custom resolver.
+
+
+Database:
+Persistent storage:Redis
+We need to cache the page because it will take time for fully rendering the webpage.
+
+Duplicate detection:
+
+Url Extractor:
+since one url ie. one website has multiple link and they may be of the same website or multiple website or different sub domains of one single website.
+eg.google.com has many subdomains like google.blog.com, google.keep.com etc.
+
+
+URL Filter:
+set of unique urls from the website.
+now if we want to fetch only html or mp3 or mp4 or jpeg then we can use filter of our requirement.
+
+
+URL loader/ is crawled:
+it is very hard to compare whether the url is crawled or not. hence here we use bloom filter.
+bloom filter is a data structures to make more efficient to know whether the url is crawled or not.
+
+Make a file which contain all the urls of any given number of domain:
